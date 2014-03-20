@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>Kalenteri</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../css/bootstrap.css" rel="stylesheet">
+        <link href="../css/bootstrap-theme.css" rel="stylesheet">
+        <link href="../css/main.css" rel="stylesheet">
+    </head>
+<body>
+    <div class = "container">
+        <br>
+        <div class = "row">
+        <div class = "col-md-2">
+            <div class = "panel panel-default">
+                <ul class="nav">
+                    <li><a href="merkinnat.html">Merkinnät</a></li>
+                    <li><a href="uusimerkinta.html">Uusi merkintä</a></li>
+                    <li><a href="#"><b>Uusi kalenteri</b></a></li>
+                    <li><a href="valitsekalenteri.html">Muokkaa kalentereita</a></li>    
+                </ul>
+            </div>       
+        </div>
+        
+        <div class = "col-md-8">
+            <h3>Uusi kalenteri</h3>
+            <form class="form-horizontal" role="form" action="merkinnat.html" method="POST">
+                <div class = "form-group">               
+                    <div class="col-md-10">
+                        <label  for="inputNimi" class="control-label">Nimi</label>
+                        <input type="text" class="form-control" id="inputNimi" name="Nimi" placeholder="Nimi">
+                    </div>
+                </div>    
+                <div class ="form-group">
+                    <div class = "col-md-10">
+                        <label for="checkJulkinen" class ="control-label">Julkinen</label>
+                        <input type="checkbox" name="julkinen" id="checkJulkinen" value="Julkinen">             
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <button type="submit" class="btn btn-default">Tallenna</button>
+                    </div>
+                </div>  
+                
+            </form>
+            
+        </div>
+    </div>
+    </div>
+</body>
+</html>        

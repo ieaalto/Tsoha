@@ -1,0 +1,75 @@
+
+<html>
+    <head>
+        <title>Kalenteri</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../css/bootstrap.css" rel="stylesheet">
+        <link href="../css/bootstrap-theme.css" rel="stylesheet">
+        <link href="../css/main.css" rel="stylesheet">
+    </head>
+<body>
+        <div class = "container">
+        <br>
+        <div class = "row">
+        <div class = "col-md-2">
+            <div class = "panel panel-default">
+                <ul class="nav">
+                    <li><a href="merkinnat.html">Merkinnät</a></li>
+                    <li><a href="#"><b>Uusi merkintä</b></a></li>
+                    <li><a href="uusikalenteri.html">Uusi kalenteri</a></li>
+                    <li><a href="valitsekalenteri.html">Muokkaa kalentereita</a></li>    
+                </ul>
+            </div>       
+        </div>
+        
+        <div class = "col-md-8">
+            <h3>Uusi merkinta</h3>
+            <form class="form-horizontal" role="form" action="merkinnat.html" method="POST">
+                <div class = "form-group">               
+                    <div class="col-md-10">
+                        <label  for="inputAihe" class="control-label">Aihe</label>
+                        <input type="text" class="form-control" id="inputAihe" name="Aihe" placeholder="Aihe">
+                    </div>
+                </div>    
+                
+                <div class ="form-group">
+                  <div class = "form-inline">    
+                    <div class = "col-md-10">
+                        <label  for="inputP" class="control-label">Pvm</label>
+                        <input type="text" size="2" class="form-control " id="inputP" name="PP" placeholder="PP">
+                        <input type="text" size="2" class="form-control " name="KK" placeholder="KK">
+                        <input type="text" size="4" class="form-control " name="VVVV" placeholder="VVVV">
+                        <label for="inputH" class ="control-label">Klo</label>
+                        <input type="text" size="2" class="form-control " id="inputH" name="HH" placeholder="HH">
+                        <input type="text" size="2" class="form-control " name="MM" placeholder="MM">
+                    </div>
+                    
+                  </div>    
+                </div>
+                <div class ="form-group">
+                    <div class = "col-md-10">
+                        <h4>Merkitään kalentereihin:</h4>
+                        <label for="checkKalenteri" class ="control-label">Kalenteri 1</label>
+                        <input type="checkbox" name="kalenteri 1" id="checkKalenteri1" value="Kalenteri 1">
+                        <label for="checkKalenteri" class ="control-label">Kalenteri 2</label>
+                        <input type="checkbox" name="kalenteri 2" id="checkKalenteri2" value="Kalenteri 2">                
+                    </div>
+                </div>
+                <div class ="form-group">
+                    <div class = "col-md-10">
+                        <label for="checkJulkinen" class ="control-label">Julkinen</label>
+                        <input type="checkbox" name="julkinen" id="checkJulkinen" value="Julkinen">             
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <button type="submit" class="btn btn-default">Merkitse</button>
+                    </div>
+                </div>            
+            </form>
+        </div>
+        </div>
+        </div>
+</body>
+</html>
