@@ -40,6 +40,8 @@
                 
             </form>
             <br>
+            <h4>Kalenterin tiedot</h4>
+            <p>Kalenterin tunnusluku on XXXXX. Kalenterin omistaa XXXXX.</p>
             <form class="form-horizontal" role="form" action="merkinnat.html" method="POST">
                 <div class = "form-group">
                    <div class="col-md-10">
@@ -50,7 +52,13 @@
                 <div class ="form-group">
                     <div class = "col-md-10">
                         <label for="checkJulkinen" class ="control-label">Julkinen</label>
-                        <input type="checkbox" name="julkinen" id="checkJulkinen" value="Julkinen">             
+                        <input type="checkbox" name="julkinen" id="checkJulkinen" value="1">             
+                    </div>
+                </div>
+                <div class ="form-group">
+                    <div class = "col-md-10">
+                        <label for="checkEteenpain" class ="control-label">Salli jakaminen eteenpäin</label>
+                        <input type="checkbox" name="eteenpain" id="checkEteenpain" value="1">             
                     </div>
                 </div>
                 <div class="form-group">
@@ -60,9 +68,34 @@
                 </div>
             </form>
             <br>
-            <form role="form" action="merkinnat.html" method="POST">
-                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span>Poista</button>
+            <h4>Jakaminen</h4>
+            <table class="table table"> 
+                <thread>
+                    <tr>
+                        <td>Käyttäjä </td>
+                    </tr>
+                </thread>
+                <tr>
+                    <th>AkuAnkka</th>
+                </tr>
+                <tr>
+                    <th>PellePel0ton</th>
+                </tr>
+            </table>
+            <form class = "form-inline" role="form" action="kalenterinmuokkaus.html" method="POST">
+                <div class="form-group">
+                    <label for="inputJako" class ="control-label">Jaa käyttäjälle:</label>
+                    <input type="text" id="inputJako" name="kayttajatunnus" placeholder="Käyttäjätunnus">
+                    <button type = "submit" class="btn btn-default">Jaa</button>
+                </div>
             </form>
+            <br>
+            <h4>Poista kalenteri</h4>
+            <form role="form" action="merkinnat.html" method="POST">
+                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span>Poista kalenteri</button>
+            </form>
+            
+            
         </div>
     </div>
     </div>
