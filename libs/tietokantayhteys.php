@@ -10,4 +10,3 @@ function getTietokantayhteys() {
   return $yhteys;
 }
 
-

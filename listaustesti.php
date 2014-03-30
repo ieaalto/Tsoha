@@ -1,6 +1,6 @@
 
 <?php
-require 'lib/tietokantayhteys.php';
+require_once  'libs/tietokantayhteys.php';
 
 function haeKalenterit(){
     $palautus = array();
