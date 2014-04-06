@@ -1,5 +1,4 @@
 <?php
-use Kayttaja;
 require 'libs/tietokantayhteys.php';
    
 function etsiKayttaja($name, $passwd){

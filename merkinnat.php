@@ -1,7 +1,7 @@
 <?php
 require 'libs/common.php';
 if (onKirjautunut()){
-    echo 'TODO: merkintälistaus.';
+    naytaNakyma('merkinnat_view.php');
 }else{
     header('Location:index.php');
 }

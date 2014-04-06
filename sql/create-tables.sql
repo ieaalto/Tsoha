@@ -4,7 +4,7 @@ salasana varchar(16)
 );
 
 create table Kalenteri(
-tunnusnumero serial primary key,
+id serial primary key,
 nimi varchar(24),
 omistaja varchar(24),
 julkinen integer,
@@ -14,7 +14,7 @@ foreign key(omistaja) references Kayttaja
 );
 
 create table Merkinta(
-tunnusnumero serial primary key,
+id serial primary key,
 aihe varchar(32),
 pvm date,
 klo time
