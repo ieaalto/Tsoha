@@ -32,13 +32,13 @@ insert into KayttajanKalenteri(kayttaja, kalenteri)
 values('AkuAnkka',2);
 
 insert into Merkinta(aihe,pvm,klo)
-values('Mikin willit bileet', date'2014-3-28',time'21:00:00');
+values('Mikin willit bileet', date'2014-4-28',time'21:00:00');
 
 insert into Merkinta(aihe,pvm,klo)
-values('Tsohan deadline', date'2014-3-23',time'23:00:00');
+values('Tsohan deadline', date'2014-4-27',time'23:00:00');
 
 insert into Merkinta(aihe,pvm,klo)
-values('Työhaastattelu', date'2014-3-24',time'10:30:00');
+values('Työhaastattelu', date'2014-4-29',time'10:30:00');
 
 
 insert into KalenterinMerkinta(merkinta, kalenteri)

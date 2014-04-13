@@ -7,7 +7,7 @@ if (onKirjautunut()){
         $nimi = $_POST['nimi'];
         if(empty($nimi)){
             naytaNakyma($sivu, array(virhe => 'Anna kalenterille nimi!'));
-        } else if(!Kalenteri::tarkistaKalenterinNimi($nimi)){
+        } else if(!tarkistaSyote($nimi,24)){
             naytaNakyma($sivu, array(virhe => 'Kalenterin nimen tulee olla enintään 24 merkkiä pitkä!'));
         }
         if(isset($_POST['julkinen'])){

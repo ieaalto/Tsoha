@@ -1,5 +1,4 @@
 <?php
-require 'libs/tietokantayhteys.php';
 class Kalenteri{
     private $id;
     private $nimi;
@@ -108,13 +107,6 @@ class Kalenteri{
             return true;
         } catch(PDOException $e){
             return false;
-        }
-    }
-    
-    
-    public static function tarkistaKalenterinNimi($nimi){
-        if(strlen($nimi) <= 24 && strlen($nimi) > 0){
-            return true;
         }
     }
     

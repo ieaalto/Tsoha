@@ -14,3 +14,21 @@ function onKirjautunut(){
         return false;
     }
 }
+
+function tarkistaSyote($nimi, $pituus){
+        if(strlen($nimi) <= $pituus && strlen($nimi) > 0){
+            return true;
+        }
+    }
+    
+function viikonpaiva(){
+        $paivat = array('maanantai','tiistai','keskiviikko','torstai','perjantai','lauantai','sunnuntai');
+        $pv = date('N');
+        return $paivat[((int)$pv)-1];       
+}
+
+function tarkistaKellonaika($hh, $mm){
+    if($hh >=  0 && $hh < 24 && $mm >= 0 && $mm <= 59){
+        return true;
+    }
+}
