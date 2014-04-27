@@ -1,5 +1,6 @@
 <?php
 require_once 'libs/common.php';
+require 'libs/tietokantayhteys.php';
 require_once "libs/models/kalenteri.php";
 
 if(onKirjautunut()){

@@ -3,36 +3,28 @@ require_once 'libs/common.php';
 require_once 'libs/models/kayttaja.php';
 
 if(!onKirjautunut()){
-    $tunnus = $_POST["tunnus"];
-    $salasana = $_POST["salasana"];
+    $tunnus = htmlspecialchars($_POST["tunnus"]);
+    $salasana = htmlspecialchars($_POST["salasana"]);
 
     if(empty($tunnus)&&empty($salasana)){
         naytaNakyma('kirjautuminen.php',array(virhe => '', tunnus => NULL));
-        exit();
-    }
-
-    if(empty($tunnus)){
+    } if(empty($tunnus)){
         naytaNakyma('kirjautuminen.php',array(virhe => 'Anna tunnus!', tunnus => NULL));
-        exit();
-    }
-
-    if(empty($salasana)){
+    } if(empty($salasana)){
         naytaNakyma('kirjautuminen.php',array(virhe => 'Anna salasana!', tunnus=>$tunnus));
-        exit();
     }
+    
     $kayttaja = etsiKayttaja($tunnus,$salasana);
-
 
     if($kayttaja != null){
         $_SESSION['kayttaja'] = $kayttaja;    
         header('Location: merkinnat.php');
     } else{
         if(tunnusVapaa($tunnus)){        
-            header('Location: rekisteroityminen.php');
+            naytaNakyma('kirjautuminen.php', array(virhe => 'Väärä tunnus!'));
         }
         else{
-            naytaNakyma('kirjautuminen.php',array(virhe => 'Väärä salasana! Jos yritit rekisteröityä, haluamasi tunnus on jo käytössä.', tunnus=>$tunnus));  
-            exit();
+            naytaNakyma('kirjautuminen.php',array(virhe => 'Väärä salasana!', tunnus=>$tunnus));  
         }
     }
 } else{

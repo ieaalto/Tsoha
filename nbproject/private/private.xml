@@ -3,20 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Iiro/Tsoha/views/muokkaamerkintaa_view.php</file>
-            <file>file:/C:/Users/Iiro/Tsoha/uusikalenteri.php</file>
-            <file>file:/C:/Users/Iiro/Tsoha/muokkaakalentereita.php</file>
-            <file>file:/C:/Users/Iiro/Tsoha/uloskirjautuminen.php</file>
-            <file>file:/C:/Users/Iiro/Tsoha/muokkaamerkintaa.php</file>
-            <file>file:/C:/Users/Iiro/Tsoha/naytakayttajat.php</file>
-            <file>file:/C:/Users/Iiro/Tsoha/views/muokkaakalentereita_view.php</file>
-            <file>file:/C:/Users/Iiro/Tsoha/rekisteroityminen.php</file>
-            <file>file:/C:/Users/Iiro/Tsoha/views/uusimerkinta_view.php</file>
-            <file>file:/C:/Users/Iiro/Tsoha/merkinnat.php</file>
-            <file>file:/C:/Users/Iiro/Tsoha/views/merkinnat_view.php</file>
-            <file>file:/C:/Users/Iiro/Tsoha/uusimerkinta.php</file>
-            <file>file:/C:/Users/Iiro/Tsoha/libs/models/kalenteri.php</file>
-            <file>file:/C:/Users/Iiro/Tsoha/libs/models/merkinta.php</file>
+            <file>file:/C:/Users/Iiro/Tsoha/libs/common.php</file>
         </group>
     </open-files>
 </project-private>

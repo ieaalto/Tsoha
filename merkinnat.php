@@ -18,25 +18,16 @@ if (onKirjautunut()){
     if(isset($_POST["aikavali"])){
         $aikavali = $_POST["aikavali"];
     } else {$aikavali = "4";}
-    $merkinnat = array();
+    
+    $tunnukset = array();
     foreach($kalenterit as $kalenteri){
         if($valittu == $kalenteri->getId() || $valittu == -1){
-            $taman =  Merkinta::haeMerkinnat($kalenteri->getId(), $aikavali);
-            foreach($taman as $merkinta){
-                $eivalittu = true;
-                foreach($merkinnat as $valinta){
-                    if($valinta->getId() == $merkinta->getId()){
-                        $eivalittu = false;
-                        break;
-                    }
-                }
-                if($eivalittu){
-                    $merkinnat[] = $merkinta;
-                }
-            }
+            $tunnukset[] = $kalenteri->getId();
         }
     }
     
+    $merkinnat = Merkinta::haeMerkinnat($tunnukset, $aikavali);
+
     naytaNakyma('merkinnat_view.php', array(kalenterit=>$kalenterit, valittu=>$valittu, aikavali=>$aikavali, merkinnat => $merkinnat));
 }else{
     header('Location:index.php');

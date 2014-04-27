@@ -1,10 +1,11 @@
 <?php
 require 'libs/common.php';
+require 'libs/tietokantayhteys.php';
 require 'libs/models/kalenteri.php';
 $sivu = 'uusikalenteri_view.php';
 if (onKirjautunut()){
     if(isset($_POST['tallenna'])){
-        $nimi = $_POST['nimi'];
+        $nimi = htmlspecialchars($_POST['nimi']);
         if(empty($nimi)){
             naytaNakyma($sivu, array(virhe => 'Anna kalenterille nimi!'));
         } else if(!tarkistaSyote($nimi,24)){

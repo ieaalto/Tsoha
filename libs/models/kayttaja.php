@@ -6,14 +6,20 @@ function etsiKayttaja($name, $passwd){
     $kysely = getTietokantayhteys()->prepare($sql);
     $kysely->execute(array($name, $passwd));
     $tulos = $kysely->fetchObject();
+    
     if ($tulos == null) {
        return null;
     } else {
         return $tulos->kayttajatunnus;
     }
-        
-        
+                
 } 
+
+function luoKayttaja($tunnus, $salasana){
+    $sql = "insert into Kayttaja(kayttajatunnus, salasana) values(?, ?);";
+    $kysely = getTietokantayhteys()->prepare($sql);
+    $kysely->execute(array($tunnus, $salasana));
+}
     
 function tunnusVapaa($name){
     $sql = "select kayttajatunnus from kayttaja where kayttajatunnus = ?";

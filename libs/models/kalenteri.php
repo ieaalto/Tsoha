@@ -1,4 +1,7 @@
 <?php
+/*
+ * Kalenteri-tauluun liittyvä malliluokka.
+ */
 class Kalenteri{
     private $id;
     private $nimi;
@@ -15,25 +18,49 @@ class Kalenteri{
             $this->saaJakaa = $kalenteri->saajakaa;
         }
     }
-    
+    /*
+     * Hakee kaikki käyttäjään $kayttaja liittyvä kalenterit. $kayttaja on käyttäjätunnus(merkkijono).
+     */
     public static function haeKayttajanKalenterit($kayttaja){
         $kalenterit = array();
+        $yhteys = getTietokantayhteys();
+        
         $sql = "select kalenteri from kayttajankalenteri where kayttaja = ?";
-        $kysely = getTietokantayhteys()->prepare($sql);
+        $kysely = $yhteys->prepare($sql);
         $kysely->execute(array($kayttaja));
         $tulos = $kysely->fetchAll(PDO::FETCH_OBJ);
+        
         foreach($tulos as $id){
             $sql = "select * from kalenteri where id=?";
-            $kysely = getTietokantayhteys()->prepare($sql);
+            $kysely = $yhteys->prepare($sql);
             $kysely->execute(array($id->kalenteri)); 
             $taulu = $kysely->fetchAll(PDO::FETCH_OBJ);
             foreach($taulu as $kalenteri){
                 $kalenterit[] = new Kalenteri($kalenteri);
             }            
-        }        
+        }
+        
         return $kalenterit;
     }
+    /*
+     * Hakee kalenterin tunnuksella $id.
+     */
+    public static function haeKalenteriTunnuksella($id){
+        $sql = "select * from kalenteri where id=?";
+        $kysely = getTietokantayhteys()->prepare($sql);
+        $kysely->execute(array($id)); 
+        $tulos = $kysely->fetchObject();
+        
+        if($tulos == null){
+            return null;
+        }
+        
+        return new Kalenteri($tulos);
+    }
     
+    /*
+     * Hakee kalenterin $id arraysta $kalenterit. Huom. ei käytä tietokantaa.
+     */
     public static function haeKalenteri($kalenterit, $id){
         foreach($kalenterit as $k){
             if($k->getId() == $id){
@@ -109,7 +136,10 @@ class Kalenteri{
             return false;
         }
     }
-    
+    /*
+     * Palauttaa arrayn käyttäjistä, joihin kalenteri $id liittyy. $id on kalenterin tunnus(kokonaisluku). Palautus arvo array 
+     * käyttäjätunnuksista(merkkijonoja).
+     */
     public static function haeKalenterinKayttajat($id){
         $yhteys = getTietokantayhteys();
         $kayttajat = array();

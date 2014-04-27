@@ -13,9 +13,9 @@ if(onKirjautunut()){
     $valittu = $_POST['valittu'];
     $paivita = $_POST['paivita'];
     $jaa = $_POST['jaa'];
-    $kenelle = $_POST['kenelle'];
+    $kenelle = htmlspecialchars($_POST['kenelle']);
     if(isset($paivita)){
-        $nimi = $_POST['nimi'];
+        $nimi = htmlspecialchars($_POST['nimi']);
         if(!tarkistaSyote($nimi,24)){
             naytaNakyma('muokkaakalentereita_view.php', array(kalenterit => $kalenterit, valittu => $paivita, virhe =>'Tarkista kalenterin nimi! Nimen tulee sisältää 1-24 merkkiä.'));
         }

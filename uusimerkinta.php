@@ -8,7 +8,7 @@ if (onKirjautunut()){
     $sivu="uusimerkinta_view.php";
     $kayttaja = $_SESSION['kayttaja'];
     $kalenterit = Kalenteri::haeKayttajanKalenterit($kayttaja);
-    $aihe = $_POST["aihe"];
+    $aihe = htmlspecialchars($_POST["aihe"]);
     $pp = $_POST["pp"];
     $kk = $_POST["kk"];
     $vv = $_POST["vv"];

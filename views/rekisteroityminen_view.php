@@ -1,8 +1,5 @@
 <div class = "container" > 
-            <h1>Tervetuloa!</h1>
-            <p><a href="rekisteroityminen.php">Rekisteröidy tästä.</a>
-            <br>   
-            <a href="julkinen.php">Julkisia kalentereita selaamaan pääset tästä.</a></p>
+            <h2>Rekisteröityminen</h2>
             <form class="form-horizontal" role="form" action="" method="POST">
                 <div class = "form-group">               
                     <div class="col-md-5">
@@ -23,10 +20,16 @@
                         <input type="password" class ="form-control" id="inputSalasana" name="salasana" placeholder="Salasana">
                     </div>                    
                 </div>
+                <div class = "form-group">    
+                    <div class = "col-md-5">
+                        <label  for="inputSalasanaUud" class="control-label">Salasana uudelleen</label>
+                        <input type="password" class ="form-control" id="inputSalasanaUud" name="salasana2" placeholder="Salasana uudelleen">
+                    </div>                    
+                </div>
                 <div style="color:#FF0000"> <?php echo $data -> virhe?></div>
                 <div class="form-group">
                     <div class="col-md-10">
-                        <button type="submit" class="btn btn-default">Kirjaudu</button>
+                        <button type="submit" class="btn btn-default">Rekisteröidy</button>
                     </div>
                 </div>            
             </form>

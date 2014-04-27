@@ -22,7 +22,7 @@ if(onKirjautunut()){
         naytaNakyma($sivu, array(kalenterit=>$kalenterit, aihe=>$aihe, pp => $p, kk => $k, vv => $v, hh => $h, mm => $m, id => $id ));        
     } else {
         $id = $_POST['laheta'];
-        $aihe = $_POST['aihe'];
+        $aihe = htmlspecialchars($_POST['aihe']);
         $pp = $_POST['pp'];
         $kk = $_POST['kk'];
         $vv = $_POST['vv'];

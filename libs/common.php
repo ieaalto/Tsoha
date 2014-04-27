@@ -28,7 +28,9 @@ function viikonpaiva(){
 }
 
 function tarkistaKellonaika($hh, $mm){
-    if($hh >=  0 && $hh < 24 && $mm >= 0 && $mm <= 59){
-        return true;
+    if(is_numeric($hh) && is_numeric($mm)){
+        if($hh >=  0 && $hh < 24 && $mm >= 0 && $mm <= 59){
+            return true;
+        }
     }
 }
